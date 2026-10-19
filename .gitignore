@@ -23,3 +23,8 @@ build/
 # Logs
 *.log
 npm-debug.log*
+
+# Cuestionarios internos y descargas locales (no publicar)
+*.xlsx
+*.xls
+Descargas/
