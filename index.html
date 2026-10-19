@@ -6,7 +6,7 @@
 <title>Estudio Jurídico Enríquez & Asociados | Abogados</title>
 <meta name="description" content="Estudio Jurídico Enríquez & Asociados. Defendemos tus derechos, protegemos tu futuro. Asesoría legal en derecho civil, laboral y más, en todo el Perú.">
 <meta name="theme-color" content="#16130f">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data:; connect-src 'self'; frame-src https://www.google.com; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Estudio Jurídico Enríquez & Asociados">
@@ -348,17 +348,24 @@
         </div>
       </div>
 
-      <div class="form-group">
-        <label for="area">Área legal de tu consulta</label>
-        <select id="area" name="area">
-          <option value="civil">Derecho Civil</option>
-          <option value="penal">Derecho Penal</option>
-          <option value="laboral">Derecho Laboral</option>
-          <option value="corporativo">Derecho Corporativo</option>
-          <option value="familia">Derecho de Familia</option>
-          <option value="migratorio">Derecho Migratorio</option>
-          <option value="otro">Otro</option>
-        </select>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="phone">Teléfono</label>
+          <input type="tel" id="phone" name="phone" placeholder="999 999 999" autocomplete="tel" required>
+          <span class="field-error" id="phoneError" role="alert">Ingresa un teléfono de contacto.</span>
+        </div>
+        <div class="form-group">
+          <label for="area">Área legal de tu consulta</label>
+          <select id="area" name="area">
+            <option value="civil">Derecho Civil</option>
+            <option value="penal">Derecho Penal</option>
+            <option value="laboral">Derecho Laboral</option>
+            <option value="corporativo">Derecho Corporativo</option>
+            <option value="familia">Derecho de Familia</option>
+            <option value="migratorio">Derecho Migratorio</option>
+            <option value="otro">Otro</option>
+          </select>
+        </div>
       </div>
 
       <div class="form-group">
@@ -367,11 +374,30 @@
         <span class="field-error" id="messageError" role="alert">Cuéntanos brevemente tu caso.</span>
       </div>
 
+      <div class="form-group form-check">
+        <label class="check-label">
+          <input type="checkbox" id="consent" name="consent" required>
+          Acepto el tratamiento de mis datos conforme al <a href="#aviso-legal">Aviso Legal</a> del estudio.
+        </label>
+        <span class="field-error" id="consentError" role="alert">Debes aceptar el tratamiento de tus datos para continuar.</span>
+      </div>
+
       <button type="submit" class="btn btn-primary btn-lg btn-block">
         <i class="fa-solid fa-paper-plane"></i> Enviar consulta
       </button>
       <p class="form-note" id="formNote" role="status" aria-live="polite"></p>
     </form>
+  </div>
+
+  <div class="container">
+    <div class="map-frame reveal">
+      <iframe
+        title="Ubicación del estudio en Google Maps"
+        src="https://www.google.com/maps?q=Av.+Bolivia+325,+Cercado+de+Lima,+Lima,+Peru&output=embed"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
   </div>
 </section>
 
@@ -403,6 +429,18 @@
       <a href="#contacto">Contacto</a>
     </div>
   </div>
+
+  <div class="container">
+    <div class="legal-notice" id="aviso-legal">
+      <h5>Aviso legal</h5>
+      <p>
+        Titular: Estudio Jurídico Enríquez &amp; Asociados E.I.R.L. · RUC 20614980304 ·
+        Domicilio: Av. Bolivia 325, int. 302, Cercado de Lima, Lima, Perú.
+      </p>
+      <p>La Política de Privacidad y los Términos de Uso de este sitio están en preparación por el estudio y se publicarán próximamente.</p>
+    </div>
+  </div>
+
   <div class="footer-bottom">
     <div class="container">
       <span>&copy; <span id="year"></span> Estudio Jurídico Enríquez &amp; Asociados. Todos los derechos reservados.</span>

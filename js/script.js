@@ -104,11 +104,25 @@ const fields = [
     validate: (value) => emailPattern.test(value.trim())
   },
   {
+    input: document.getElementById('phone'),
+    group: document.getElementById('phone').closest('.form-group'),
+    validate: (value) => value.trim().replace(/\D/g, '').length >= 6
+  },
+  {
     input: document.getElementById('message'),
     group: document.getElementById('message').closest('.form-group'),
     validate: (value) => value.trim().length > 9
   }
 ];
+
+const consentInput = document.getElementById('consent');
+const consentGroup = consentInput.closest('.form-group');
+
+consentInput.addEventListener('change', () => {
+  if (consentGroup.classList.contains('invalid') && consentInput.checked) {
+    consentGroup.classList.remove('invalid');
+  }
+});
 
 fields.forEach(field => {
   field.input.addEventListener('input', () => {
@@ -128,6 +142,9 @@ contactForm.addEventListener('submit', (e) => {
     field.group.classList.toggle('invalid', !isValid);
     if (!isValid && !firstInvalid) firstInvalid = field.input;
   });
+
+  consentGroup.classList.toggle('invalid', !consentInput.checked);
+  if (!consentInput.checked && !firstInvalid) firstInvalid = consentInput;
 
   if (firstInvalid) {
     firstInvalid.focus();
