@@ -425,6 +425,13 @@ h1, h2, h3, h4 {
   position: relative;
   overflow: hidden;
 }
+.team-avatar img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 .team-avatar::after {
   content: '';
   position: absolute;
