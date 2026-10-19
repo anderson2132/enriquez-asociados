@@ -153,7 +153,20 @@ contactForm.addEventListener('submit', (e) => {
     return;
   }
 
+  const areaText = areaSelect.options[areaSelect.selectedIndex].text;
+  const lines = [
+    'Hola, quisiera una consulta legal.',
+    '',
+    `Nombre: ${document.getElementById('name').value.trim()}`,
+    `Teléfono: ${document.getElementById('phone').value.trim()}`,
+    `Email: ${document.getElementById('email').value.trim()}`,
+    `Área: ${areaText}`,
+    `Caso: ${document.getElementById('message').value.trim()}`
+  ];
+  const whatsappUrl = `https://wa.me/51999800338?text=${encodeURIComponent(lines.join('\n'))}`;
+
   formNote.style.color = 'var(--accent)';
-  formNote.textContent = '¡Gracias! Tu consulta fue registrada (demo local, aún sin envío real).';
+  formNote.textContent = 'Te estamos redirigiendo a WhatsApp con tu consulta...';
+  window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
   contactForm.reset();
 });
