@@ -158,14 +158,13 @@ h1, h2, h3, h4 {
 
 .brand {
   display: flex;
-  align-items: baseline;
-  gap: 0.6rem;
+  align-items: center;
+  gap: 0.7rem;
 }
 .brand-mark {
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 1.3rem;
-  color: var(--accent);
+  height: 48px;
+  width: auto;
+  display: block;
 }
 .brand-name {
   font-family: var(--font-display);
@@ -587,7 +586,8 @@ h1, h2, h3, h4 {
 ========================================= */
 .footer { background: #16130f; color: rgba(253, 246, 240, 0.7); padding-top: 4rem; }
 .footer-inner { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 3rem; padding-bottom: 3rem; }
-.footer-brand .brand-name, .footer-brand .brand-mark { color: var(--accent-contrast); }
+.footer-brand .brand-name { color: var(--accent-contrast); }
+.footer-brand .brand-mark { height: 56px; }
 .footer-brand p { margin-top: 1rem; font-size: 0.86rem; max-width: 300px; }
 .footer-col h5 { font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(253,246,240,0.45); margin-bottom: 1.1rem; }
 .footer-col a { display: block; font-size: 0.89rem; margin-bottom: 0.75rem; transition: color 0.15s; color: rgba(253,246,240,0.7); }
